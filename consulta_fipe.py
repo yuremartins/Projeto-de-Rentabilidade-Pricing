@@ -4,7 +4,6 @@ def consultar_valor_veiculo(data):
     url = "ConsultarValorComTodosParametros"
     return fipe_json(url, data)
 
-# Exemplo de uso
 data = {
     "codigoTabelaReferencia": 231,
     "codigoTipoVeiculo": 1,
