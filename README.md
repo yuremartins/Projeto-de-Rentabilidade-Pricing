@@ -21,6 +21,8 @@ def fipe_json(resource, data=None):
         return None
 ```
 
+ > Este script contém a função `fipe_json`, responsável por realizar requisições HTTP POST à API da Tabela FIPE e retornar os dados em formato JSON.
+
 ## Consulta de Valor de Veículo na Tabela FIPE
 
 ````
@@ -45,6 +47,8 @@ data = {
 valor_veiculo = consultar_valor_veiculo(data)
 print(valor_veiculo)
 ````
+> Este script contém a função `consultar_valor_veiculo`, que consulta os detalhes de um veículo específico na Tabela FIPE, incluindo o valor de compra.
+
 ## Calculadora de Rentabilidade
 
 ````
@@ -92,3 +96,4 @@ prazo_locacao = 12
 resultado = calcular_rentabilidade(valor_compra, taxa_depreciacao, taxa_lucro, prazo_locacao, valor_locacao)
 print(resultado)
 ````
+> Este script contém a função `calcular_rentabilidade` é utilizada para calcular a rentabilidade do veículo com base nos dados obtidos na consulta.
