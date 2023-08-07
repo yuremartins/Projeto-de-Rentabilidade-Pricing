@@ -98,4 +98,4 @@ print("Valor de Locação: R$ {:.2f}".format(valor_locacao))
 print("Valor de Venda: R$ {:.2f}".format(valor_venda))
 print("Rental Rate: {:.2f}%".format(rental_rate))
 ````
-> Este script contém a função `calcular_rentabilidade` é utilizada para calcular a rentabilidade do veículo com base nos dados obtidos na consulta.
+> Este script contém a função `calcular_valor_locacao` é utilizada para calcular o valor de locação do veículo com base nos dados obtidos na consulta.
