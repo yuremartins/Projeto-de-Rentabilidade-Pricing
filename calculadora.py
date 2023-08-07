@@ -1,8 +1,15 @@
 from consulta_fipe import consultar_valor_veiculo
 
 def calcular_valor_locacao(valor_compra, taxa_depreciacao_desejada, taxa_lucro_desejada, prazo_locacao_desejado):
+
+    # A cada semestre aumenta-se 0,5% de depreciação
+    semestres_extras = prazo_locacao_desejado / 6
+
+    # Aumentando a taxa de depreciação em meio porcento para cada semestre extra
+    taxa_depreciacao_atualizada = taxa_depreciacao_desejada + (semestres_extras * 0.005)
+
     # Cálculo do valor de venda considerando a depreciação
-    valor_venda = valor_compra - (valor_compra * taxa_depreciacao_desejada)
+    valor_venda = valor_compra - (valor_compra * taxa_depreciacao_atualizada)
 
     # Cálculo do valor de locação necessário para atingir a taxa de lucro desejada
     valor_locacao_necessario = ((valor_compra + (valor_compra * taxa_lucro_desejada)) + (valor_compra - valor_venda)) / prazo_locacao_desejado
@@ -27,7 +34,7 @@ valor_veiculo = consultar_valor_veiculo(data)
 valor_compra = float(valor_veiculo["Valor"].replace("R$", "").replace(".", "").replace(",", "."))
 
 # Valores desejados para cálculo de rentabilidade
-taxa_depreciacao = 0.3
+taxa_depreciacao = 0.25
 taxa_lucro = 0.2
 prazo_locacao = 24
 
