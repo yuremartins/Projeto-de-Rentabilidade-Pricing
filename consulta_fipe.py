@@ -5,13 +5,13 @@ def consultar_valor_veiculo(data):
     return fipe_json(url, data)
 
 data = {
-    "codigoTabelaReferencia": 231,
+    "codigoTabelaReferencia": 300,
     "codigoTipoVeiculo": 1,
-    "codigoMarca": 26,
-    "codigoModelo": 4925,
-    "ano": "2010-1",
-    "codigoTipoCombustivel": 1,
-    "anoModelo": 2011,
+    "codigoMarca": 56,
+    "codigoModelo": 10172,
+    "ano": "2023-3",
+    "codigoTipoCombustivel": 3,
+    "anoModelo": 2023,
     "tipoConsulta": "tradicional"
 }
 
