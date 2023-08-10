@@ -1,6 +1,10 @@
 # Projeto de Rentabilidade (Pricing)
 Este projeto em Python tem como objetivo calcular a rentabilidade de um veículo com base nos dados da Tabela FIPE e no valor de locação.
 
+## Análise de Rentabilidade
+- **Dataset:** [Kaggle](https://www.kaggle.com/datasets/yuremartins/car-rental-data)
+- **Notebook:** [Pricing](https://www.kaggle.com/code/yuremartins/pricing)
+
 ## Requisição da API da Tabela FIPE
 ```
 import requests
