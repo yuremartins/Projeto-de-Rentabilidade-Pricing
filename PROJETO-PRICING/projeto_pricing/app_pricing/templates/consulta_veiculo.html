@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Veículo</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="codigoTabelaReferencia">Código Tabela Referência</label>
+                <input type="number" id="codigoTabelaReferencia" name="codigoTabelaReferencia">
+            </div>
+            <div class="form-group">
+                <label for="codigoTipoVeiculo">Código Tipo Veículo</label>
+                <input type="number" id="codigoTipoVeiculo" name="codigoTipoVeiculo">
+            </div>
+            <div class="form-group">
+                <label for="codigoMarca">Código Marca</label>
+                <input type="number" id="codigoMarca" name="codigoMarca">
+            </div>
+            <div class="form-group">
+                <label for="codigoModelo">Código Modelo</label>
+                <input type="number" id="codigoModelo" name="codigoModelo">
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano</label>
+                <input type="text" id="ano" name="ano">
+            </div>
+            <div class="form-group">
+                <label for="codigoTipoCombustivel">Código Tipo Combustível</label>
+                <input type="number" id="codigoTipoCombustivel" name="codigoTipoCombustivel">
+            </div>
+            <div class="form-group">
+                <label for="anoModelo">Ano Modelo</label>
+                <input type="number" id="anoModelo" name="anoModelo">
+            </div>
+            <div class="form-group">
+                <label for="tipoConsulta">Tipo de Consulta</label>
+                <input type="text" id="tipoConsulta" name="tipoConsulta">
+            </div>
+            <button type="submit">Consultar</button>
+        </form>
+    </div>
+</body>
+</html>
