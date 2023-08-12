@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado do Processamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado do Processamento</h1>
+        {% if valor_veiculo and prazo_contrato %}
+            <p>Valor do veículo: R$ {{ valor_veiculo }}</p>
+            <p>Prazo de contrato informado: {{ prazo_contrato }} meses</p>
+            <p>Valor de Locação: R$ {{ valor_locacao_necessario }}</p>
+            <p>Valor de Venda: R$ {{ valor_venda }}</p>
+            <p>Rental Rate: {{ rental_rate }}%</p>
+            <p>Faturamento Total: R$ {{ faturamento_total }}</p>
+            <p>Taxa de depreciação: {{ taxa_depreciacao_percentual }} %</p>
+            <p>Valor Depreciado: R$ {{ valor_depreciado }}</p>
+        {% else %}
+            <p>Valor ou prazo não disponíveis.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
