@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Consulta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado da Consulta</h1>
+        {% if valor_veiculo %}
+            <p>Valor: {{ valor_veiculo.Valor }}</p>
+            <p>Marca: {{ valor_veiculo.Marca }}</p>
+            <p>Modelo: {{ valor_veiculo.Modelo }}</p>
+            <p>Ano Modelo: {{ valor_veiculo.AnoModelo }}</p>
+            <p>Combustível: {{ valor_veiculo.Combustivel }}</p>
+            <p>Código Fipe: {{ valor_veiculo.CodigoFipe }}</p>
+            <p>Mês Referência: {{ valor_veiculo.MesReferencia }}</p>
+            <p>Autenticação: {{ valor_veiculo.Autenticacao }}</p>
+            <p>Tipo de Veículo: {{ valor_veiculo.TipoVeiculo }}</p>
+            <p>Sigla Combustível: {{ valor_veiculo.SiglaCombustivel }}</p>
+            <p>Data da Consulta: {{ valor_veiculo.DataConsulta }}</p>
+            <form method="get" action="{% url 'mostrar-valor' %}">
+                <input type="hidden" name="valor" value="{{ valor_veiculo.Valor }}">
+                <button type="submit">Continuar</button>
+            </form>
+        {% else %}
+            <p>Nenhum resultado encontrado.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+    
