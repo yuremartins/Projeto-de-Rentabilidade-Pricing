@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valor do Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .valor-destaque {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Valor do Veículo</h1>
+        {% if valor_veiculo %}
+            <p class="valor-destaque">Valor: {{ valor_veiculo }}</p>
+            <form method="post" action="{% url 'processar-prazo' %}">
+                {% csrf_token %}
+                <input type="hidden" name="valor_veiculo" value="{{ valor_veiculo }}">
+                <label for="prazo_contrato">Informe o prazo de contrato:</label>
+                <input type="text" id="prazo_contrato" name="prazo_contrato">
+                <label for="segmento">Informe o segmento:</label>
+                <input type="text" id="segmento" name="segmento">
+                <button type="submit">Enviar</button>
+            </form>
+        {% else %}
+            <p>Valor não disponível.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
